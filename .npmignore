@@ -1,0 +1,16 @@
+*.log
+
+# Coverage directory used by tools like istanbul
+/coverage
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+node_modules
+
+src/
+test/
+.babelrc
+.eslint*
+.*ignore

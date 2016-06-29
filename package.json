@@ -1,0 +1,56 @@
+{
+  "name": "redux-normalized-api-middleware",
+  "version": "0.0.0",
+  "description": "Redux API middleware normalizing requests",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "npm run lint && npm run test && npm run build",
+    "lint": "eslint .",
+    "build": "BABEL_ENV=production babel --out-dir lib src",
+    "test": "nyc ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v12/redux-normalized-api-middleware.git"
+  },
+  "keywords": [
+    "redux",
+    "middleware",
+    "api",
+    "request"
+  ],
+  "author": "Nikita Khomyakov <dr.evil@krtn.eu> (https://krtn.eu/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v12/redux-normalized-api-middleware/issues"
+  },
+  "homepage": "https://github.com/v12/redux-normalized-api-middleware#readme",
+  "dependencies": {
+    "humps": "^1.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.13.1",
+    "normalizr": "^2.1.0",
+    "qs": "^6.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.1.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.9.0",
+    "chai": "^3.5.0",
+    "eslint": "^2.13.1",
+    "eslint-config-standard": "^5.3.1",
+    "eslint-plugin-ava": "^2.5.0",
+    "eslint-plugin-promise": "^1.3.2",
+    "eslint-plugin-standard": "^1.3.2",
+    "nock": "^8.0.0",
+    "nyc": "^6.6.1"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  }
+}
