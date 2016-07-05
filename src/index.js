@@ -4,6 +4,8 @@ import 'isomorphic-fetch'
 import qs from 'qs'
 import { get, isEmpty, isFunction } from 'lodash'
 
+export * from 'normalizr'
+
 // Fetches an API response and normalizes the result JSON according to schema.
 // This makes every API response have the same shape, regardless of how nested it was.
 function callApi ({
