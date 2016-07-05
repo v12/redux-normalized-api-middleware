@@ -1,6 +1,6 @@
 {
   "name": "redux-normalized-api-middleware",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Redux API middleware normalizing requests",
   "main": "lib/index.js",
   "scripts": {
