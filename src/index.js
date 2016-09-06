@@ -50,7 +50,7 @@ function callApi ({
         )
       }
 
-      if (method.toLowerCase() === 'delete') {
+      if (method && method.toLowerCase() === 'delete') {
         return null
       }
 
