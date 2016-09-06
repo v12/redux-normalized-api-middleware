@@ -42,17 +42,23 @@ function callApi ({
   }
 
   return fetch(fullUrl + (!isEmpty(query) ? '?' + qs.stringify(query) : ''), options)
-    .then(response => response.json().then(json => ({ json, response })))
-    .then(({ json, response }) => {
+    .then(response => {
       if (!response.ok) {
-        return Promise.reject(json)
+        return Promise.reject(
+          response.json()
+            .catch(() => new Error('Unable to parse error message returned from the server'))
+        )
       }
 
-      const camelizedJson = camelizeKeys(json)
+      if (method.toLowerCase() === 'delete') {
+        return null
+      }
 
-      return transform(camelizedJson)
+      return response.json()
+        .then(camelizeKeys)
+        .then(transform)
+        .then(json => schema ? normalize(json, schema) : json)
     })
-    .then(json => schema ? normalize(json, schema) : json)
 }
 
 export const CALL_API = Symbol('API call')
