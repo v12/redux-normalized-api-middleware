@@ -2,7 +2,10 @@ import { normalize } from 'normalizr'
 import { camelizeKeys } from 'humps'
 import 'isomorphic-fetch'
 import qs from 'qs'
-import { get, isEmpty, isFunction } from 'lodash'
+
+import get from 'lodash/get'
+import isEmpty from 'lodash/isEmpty'
+import isFunction from 'lodash/isFunction'
 
 export * from 'normalizr'
 
